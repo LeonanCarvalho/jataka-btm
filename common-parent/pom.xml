@@ -21,6 +21,7 @@
 		<flex.mojos.version>3.8</flex.mojos.version>
 		<geotools.version>2.7.0</geotools.version>
 		<spring.version>3.0.5.RELEASE</spring.version>
+		<maven.version>3.0.0</maven.version>
 	</properties>
 
 	<modules>
@@ -125,6 +126,26 @@
 					<ajdtVersion>none</ajdtVersion>
 				</configuration>
 			</plugin>
+
+                        <plugin>
+                                <artifactId>maven-enforcer-plugin</artifactId>
+                                <executions>
+                                        <execution>
+                                                <id>enforce-maven</id>
+                                                <goals>
+                                                        <goal>enforce</goal>
+                                                </goals>
+                                                <configuration>
+                                                        <rules>
+                                                                <requireMavenVersion>
+                                                                        <version>[${maven.version},)</version>
+                                                                        <message>Check for Maven version &gt;=${maven.version} failed. Update your Maven install.</message>
+                                                                </requireMavenVersion>
+                                                        </rules>
+                                                </configuration>
+                                        </execution>
+                                </executions>
+                        </plugin>
 		</plugins>
 	</build>
 </project>
