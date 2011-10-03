@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jatakasource.btm</groupId>
+	<artifactId>common-parent</artifactId>
+	<version>${application.version}</version>
+	<packaging>pom</packaging>
+
+	<name>Jataka-BTM ${artifactId} :: Parent POM module</name>
+
+	<!-- Application Global parameters -->	
+	<properties>
+		<application.version>0.1.0-SNAPSHOT</application.version>
+		<buildNumber>0</buildNumber>
+		<revisionNumber>0</revisionNumber>
+		<releaseDate>0</releaseDate>
+		<flex.version>4.5.1.21328</flex.version>
+		<flex.mojos.version>3.8</flex.mojos.version>
+		<geotools.version>2.7.0</geotools.version>
+		<spring.version>3.0.5.RELEASE</spring.version>
+	</properties>
+
+	<modules>
+		<module>../common-util</module>
+		<module>../common-model</module>
+		<module>../common-dao-api</module>
+		<module>../common-dao-impl</module>
+		<module>../common-svc-api</module>
+		<module>../common-svc-impl</module>
+
+		<module>../common-build</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Testing -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.7</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<includeEmptyDirs>true</includeEmptyDirs>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Build>${buildNumber}</Implementation-Build>
+							<SCM-Revision>${revisionNumber}</SCM-Revision>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<manifest>
+						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+					</manifest>
+					<archive>
+						<manifestEntries>
+							<Implementation-Title>${name}</Implementation-Title>
+							<Implementation-Version>${version}</Implementation-Version>
+							<Implementation-Vendor-Id>${groupId}</Implementation-Vendor-Id>
+							<Implementation-Build>${buildNumber}</Implementation-Build>
+							<SCM-Revision>${revisionNumber}</SCM-Revision>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<projectNameTemplate>[artifactId]</projectNameTemplate>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>2.0</wtpversion>
+					<manifest>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifest>
+					<downloadSources>true</downloadSources>
+					<ajdtVersion>none</ajdtVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
