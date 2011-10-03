@@ -6,15 +6,15 @@
 
 	<parent>
 		<groupId>com.jatakasource.btm</groupId>
-		<artifactId>common-parent</artifactId>
+		<artifactId>server-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.jatakasource.btm</groupId>
-	<artifactId>common-dao-impl</artifactId>
+	<artifactId>server-svc-api</artifactId>
 	<version>${application.version}</version>
 
-	<name>Jataka-BTM ${artifactId} :: DAO-IMPL module</name>
+	<name>Jataka-BTM ${artifactId} :: Service API module</name>
 
 	<dependencies>
 	</dependencies>
