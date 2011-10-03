@@ -6,25 +6,16 @@
 
 	<parent>
 		<groupId>com.jatakasource.btm</groupId>
-		<artifactId>common-parent</artifactId>
+		<artifactId>agent-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.jatakasource.btm</groupId>
-	<artifactId>agent-parent</artifactId>
+	<artifactId>agent-main</artifactId>
 	<version>${application.version}</version>
-	<packaging>pom</packaging>
 
-	<name>Jataka-BTM ${artifactId} :: Parent POM module</name>
+	<name>Jataka-BTM ${artifactId} :: Main program module</name>
 
-	<modules>
-		<module>../agent-model</module>
-		<module>../agent-dao-api</module>
-		<module>../agent-dao-impl</module>
-		<module>../agent-svc-api</module>
-		<module>../agent-svc-impl</module>
-
-		<module>../agent-main</module>
-		<module>../agent-build</module>
-	</modules>
+	<dependencies>
+	</dependencies>
 </project>
