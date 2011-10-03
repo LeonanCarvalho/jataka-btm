@@ -11,11 +11,19 @@
 	</parent>
 
 	<groupId>com.jatakasource.btm</groupId>
-	<artifactId>common-dao-impl</artifactId>
+	<artifactId>server-parent</artifactId>
 	<version>${application.version}</version>
+	<packaging>pom</packaging>
 
-	<name>Jataka-BTM ${artifactId} :: DAO-IMPL module</name>
+	<name>Jataka-BTM ${artifactId} :: Parent POM module</name>
 
-	<dependencies>
-	</dependencies>
+	<modules>
+		<module>../server-model</module>
+		<module>../server-dao-api</module>
+		<module>../server-dao-impl</module>
+		<module>../server-svc-api</module>
+		<module>../server-svc-impl</module>
+
+		<module>../server-build</module>
+	</modules>
 </project>
