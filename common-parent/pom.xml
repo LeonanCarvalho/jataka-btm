@@ -156,15 +156,15 @@
 			</plugin>
 
 			<plugin>
-				<inherited>false</inherited>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
 				<version>1.10.b1</version>
 
 				<configuration>
-					<header>${basedir}/src/main/resources/header.txt</header>
+					<header>${basedir}../.header.txt</header>
 					<failIfMissing>true</failIfMissing>
 					<aggregate>false</aggregate>
+					<strictCheck>true</strictCheck>
 					<properties>
 						<owner>Yaniv Marom-Nachumi</owner>
 						<year>${project.inceptionYear}</year>
