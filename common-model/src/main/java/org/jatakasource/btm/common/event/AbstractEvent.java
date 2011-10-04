@@ -20,16 +20,7 @@ import org.jatakasource.btm.common.Pojo;
 import org.jatakasource.btm.common.process.OsInfo;
 
 /**
- * Base implementation for
- * {@link org.jatakasource.btm.common.event.AbstractEvent AbstractEvent} wishing
- * to log a single event.
- * <p>
- * This base class represent a single atomic event and wraps all relevant data.
- * 
- * <p>
- * Subclasses have only to create the
- * 
- * @since 0.1.0
+ * Defines a base class for business events.
  */
 public abstract class AbstractEvent implements Pojo<Long> {
 	private static final long serialVersionUID = 1079363815841039280L;
