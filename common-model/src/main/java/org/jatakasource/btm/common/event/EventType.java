@@ -37,7 +37,6 @@ public class EventType implements Pojo<Long> {
 	@Override
 	public void setId(Long id) {
 		this.id = id;
-
 	}
 
 	public EventName getName() {

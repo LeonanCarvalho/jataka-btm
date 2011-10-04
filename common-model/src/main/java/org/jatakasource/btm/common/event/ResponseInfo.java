@@ -23,7 +23,9 @@ public class ResponseInfo implements Pojo<Long> {
 
 	private Long id;
 	private Long startTime;
+	private Long endTime;
 	private Long overallTime;
+	private Long datacenterOverallTime;
 
 	@Override
 	public Long getId() {
@@ -50,4 +52,21 @@ public class ResponseInfo implements Pojo<Long> {
 	public void setOverallTime(Long overallTime) {
 		this.overallTime = overallTime;
 	}
+
+	public Long getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+	}
+
+	public Long getDatacenterOverallTime() {
+		return datacenterOverallTime;
+	}
+
+	public void setDatacenterOverallTime(Long datacenterOverallTime) {
+		this.datacenterOverallTime = datacenterOverallTime;
+	}
+
 }

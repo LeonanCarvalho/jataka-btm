@@ -27,6 +27,12 @@ public class RequestInfo implements Pojo<Long> {
 	private Long id;
 	private Long sentBytes;
 	private Long receivedBytes;
+
+	private Long startTime;
+	private Long endTime;
+	private Long netTime;
+	private Long renderTime;
+
 	private String parameters;
 
 	@Override
@@ -47,19 +53,51 @@ public class RequestInfo implements Pojo<Long> {
 		this.receivedBytes = receivedBytes;
 	}
 
-	public String getParameters() {
-		return parameters;
-	}
-
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-	}
-
 	public Long getSentBytes() {
 		return sentBytes;
 	}
 
 	public void setSentBytes(Long sentBytes) {
 		this.sentBytes = sentBytes;
+	}
+
+	public Long getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public Long getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+	}
+
+	public Long getNetTime() {
+		return netTime;
+	}
+
+	public void setNetTime(Long netTime) {
+		this.netTime = netTime;
+	}
+
+	public Long getRenderTime() {
+		return renderTime;
+	}
+
+	public void setRenderTime(Long renderTime) {
+		this.renderTime = renderTime;
+	}
+
+	public String getParameters() {
+		return parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
 	}
 }

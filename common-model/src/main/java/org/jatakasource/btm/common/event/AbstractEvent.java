@@ -28,6 +28,10 @@ public abstract class AbstractEvent implements Pojo<Long> {
 	/*
 	 * If null this event is considered either parent or orphaned.
 	 */
+	private Long rootId;
+	/*
+	 * Parent event id, on second level events this can be identical to rootId.
+	 */
 	private Long parentId;
 
 	private Process srcProces;
@@ -35,8 +39,15 @@ public abstract class AbstractEvent implements Pojo<Long> {
 	private OsInfo osInfo;
 	private ResponseInfo responseInfo;
 	private RequestInfo requestInfo;
-
 	private Integer version;
+	
+	public Long getRootId() {
+		return rootId;
+	}
+
+	public void setRootId(Long rootId) {
+		this.rootId = rootId;
+	}
 
 	public Long getParentId() {
 		return parentId;
