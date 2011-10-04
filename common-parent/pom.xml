@@ -166,7 +166,7 @@
 					<aggregate>false</aggregate>
 					<strictCheck>true</strictCheck>
 					<properties>
-						<owner>Yaniv Marom-Nachumi</owner>
+						<owner>JatakaSource</owner>
 						<year>2011</year>
 						<email>support@jatakasource.org</email>
 					</properties>
