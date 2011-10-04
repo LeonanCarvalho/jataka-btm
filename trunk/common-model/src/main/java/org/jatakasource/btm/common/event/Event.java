@@ -16,19 +16,34 @@
  */
 package org.jatakasource.btm.common.event;
 
+import org.jatakasource.btm.common.protocol.Protocol;
+
 /**
  * Base implementation for
  * {@link org.jatakasource.btm.common.event.AbstractEvent AbstractEvent} wishing
  * to log a single event.
  * <p>
  * This base class represent a single atomic event and wraps all relevant data.
- *
+ * 
  * @since 0.1.0
  */
 public class Event extends AbstractEvent {
 	private static final long serialVersionUID = 2681029214025230841L;
 
 	private Long id;
+	/*
+	 * Number on events on the same tree level.
+	 */
+	private Long descendantCount;
+
+	/*
+	 * Request attributes
+	 */
+	private String attributes;
+	private Protocol protocol;
+	private EventName eventName;
+	private EventType eventType;
+	private Integer treeLevel;
 
 	@Override
 	public Long getId() {
@@ -40,4 +55,51 @@ public class Event extends AbstractEvent {
 		this.id = id;
 	}
 
+	public Long getDescendantCount() {
+		return descendantCount;
+	}
+
+	public void setDescendantCount(Long descendantCount) {
+		this.descendantCount = descendantCount;
+	}
+
+	public String getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(String attributes) {
+		this.attributes = attributes;
+	}
+
+	public Protocol getProtocol() {
+		return protocol;
+	}
+
+	public void setProtocol(Protocol protocol) {
+		this.protocol = protocol;
+	}
+
+	public EventName getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(EventName eventName) {
+		this.eventName = eventName;
+	}
+
+	public EventType getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
+	}
+
+	public Integer getTreeLevel() {
+		return treeLevel;
+	}
+
+	public void setTreeLevel(Integer treeLevel) {
+		this.treeLevel = treeLevel;
+	}
 }
