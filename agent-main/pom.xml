@@ -12,9 +12,9 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>agent-main</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Jataka-BTM ${artifactId} :: Main program module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Main program module</name>
 
 	<dependencies>
 	</dependencies>

@@ -12,9 +12,9 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>agent-build</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Jataka-BTM ${artifactId} :: Build module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Build module</name>
 
 	<properties>
 		<resources.home>${project.build.outputDirectory}</resources.home>

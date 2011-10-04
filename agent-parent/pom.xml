@@ -12,10 +12,10 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>agent-parent</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Jataka-BTM ${artifactId} :: Parent POM module</name>
+	<name>Jataka-BTM ${projejct.artifactId} :: Parent POM module</name>
 
 	<modules>
 		<module>../agent-model</module>
