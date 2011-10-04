@@ -18,6 +18,9 @@ package org.jatakasource.btm.common.event;
 
 import org.jatakasource.btm.common.Pojo;
 
+/**
+ * Request information class.
+ */
 public class RequestInfo implements Pojo<Long> {
 	private static final long serialVersionUID = 3773081583245580093L;
 

@@ -18,6 +18,9 @@ package org.jatakasource.btm.common;
 
 import java.io.Serializable;
 
+/**
+ * Base interface holding Pojo id.
+ */
 public interface Pojo<ID extends Serializable> extends Serializable {
 
 	public ID getId();
