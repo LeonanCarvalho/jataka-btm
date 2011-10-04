@@ -161,13 +161,13 @@
 				<version>1.10.b1</version>
 
 				<configuration>
-					<header>${basedir}../.header.txt</header>
+					<header>${basedir}/../.header.txt</header>
 					<failIfMissing>true</failIfMissing>
 					<aggregate>false</aggregate>
 					<strictCheck>true</strictCheck>
 					<properties>
 						<owner>Yaniv Marom-Nachumi</owner>
-						<year>${project.inceptionYear}</year>
+						<year>2011</year>
 						<email>support@jatakasource.org</email>
 					</properties>
 					<includes>
