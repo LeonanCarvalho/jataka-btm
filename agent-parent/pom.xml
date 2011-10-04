@@ -15,7 +15,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Jataka-BTM ${projejct.artifactId} :: Parent POM module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Parent POM module</name>
 
 	<modules>
 		<module>../agent-model</module>
