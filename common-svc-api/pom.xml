@@ -12,9 +12,9 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>common-svc-api</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Jataka-BTM ${artifactId} :: Service API module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Service API module</name>
 
 	<dependencies>
 	</dependencies>

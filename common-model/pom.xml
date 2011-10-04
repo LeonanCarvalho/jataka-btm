@@ -12,9 +12,9 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>common-model</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Jataka-BTM ${artifactId} :: Model module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Model module</name>
 
 	<dependencies>
 	</dependencies>
