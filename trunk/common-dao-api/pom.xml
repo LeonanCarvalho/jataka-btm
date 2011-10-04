@@ -12,9 +12,9 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>common-dao-api</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Jataka-BTM ${artifactId} :: DAO-IMPL module</name>
+	<name>Jataka-BTM ${project.artifactId} :: DAO-IMPL module</name>
 
 	<dependencies>
 	</dependencies>

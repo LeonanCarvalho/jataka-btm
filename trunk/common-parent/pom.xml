@@ -6,14 +6,13 @@
 
 	<groupId>com.jatakasource.btm</groupId>
 	<artifactId>common-parent</artifactId>
-	<version>${application.version}</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Jataka-BTM ${artifactId} :: Parent POM module</name>
+	<name>Jataka-BTM ${project.artifactId} :: Parent POM module</name>
 
-	<!-- Application Global parameters -->	
+	<!-- Application Global parameters -->
 	<properties>
-		<application.version>0.1.0-SNAPSHOT</application.version>
 		<buildNumber>0</buildNumber>
 		<revisionNumber>0</revisionNumber>
 		<releaseDate>0</releaseDate>
@@ -54,16 +53,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.10</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -74,6 +76,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<includeEmptyDirs>true</includeEmptyDirs>
@@ -83,6 +86,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -98,15 +102,16 @@
 
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
 				<configuration>
 					<manifest>
 						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 					</manifest>
 					<archive>
 						<manifestEntries>
-							<Implementation-Title>${name}</Implementation-Title>
-							<Implementation-Version>${version}</Implementation-Version>
-							<Implementation-Vendor-Id>${groupId}</Implementation-Vendor-Id>
+							<Implementation-Title>${project.name}</Implementation-Title>
+							<Implementation-Version>${project.version}</Implementation-Version>
+							<Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
 							<Implementation-Build>${buildNumber}</Implementation-Build>
 							<SCM-Revision>${revisionNumber}</SCM-Revision>
 						</manifestEntries>
@@ -117,6 +122,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
 				<configuration>
 					<projectNameTemplate>[artifactId]</projectNameTemplate>
 					<wtpapplicationxml>true</wtpapplicationxml>
@@ -127,25 +133,78 @@
 				</configuration>
 			</plugin>
 
-                        <plugin>
-                                <artifactId>maven-enforcer-plugin</artifactId>
-                                <executions>
-                                        <execution>
-                                                <id>enforce-maven</id>
-                                                <goals>
-                                                        <goal>enforce</goal>
-                                                </goals>
-                                                <configuration>
-                                                        <rules>
-                                                                <requireMavenVersion>
-                                                                        <version>[${maven.version},)</version>
-                                                                        <message>Check for Maven version &gt;=${maven.version} failed. Update your Maven install.</message>
-                                                                </requireMavenVersion>
-                                                        </rules>
-                                                </configuration>
-                                        </execution>
-                                </executions>
-                        </plugin>
+			<plugin>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.0.1</version>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>[${maven.version},)</version>
+									<message>Check for Maven version &gt;=${maven.version} failed.
+										Update your Maven install.</message>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<inherited>false</inherited>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.10.b1</version>
+
+				<configuration>
+					<header>${basedir}/src/main/resources/header.txt</header>
+					<failIfMissing>true</failIfMissing>
+					<aggregate>false</aggregate>
+					<properties>
+						<owner>Yaniv Marom-Nachumi</owner>
+						<year>${project.inceptionYear}</year>
+						<email>support@jatakasource.org</email>
+					</properties>
+					<includes>
+						<include>src/**</include>
+					</includes>
+
+					<excludes>
+						<exclude>LICENSE.txt</exclude>
+						<exclude>**/src/test/**</exclude>
+					</excludes>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>check-headers</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<pluginRepositories>
+		<!-- Plugin repository for maven license plugin -->
+		<pluginRepository>
+			<id>mc-release</id>
+			<name>Local Maven repository of releases</name>
+			<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
